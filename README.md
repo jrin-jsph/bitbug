@@ -1,286 +1,222 @@
-# bitbug
-Hackathon Project
-
-# 🤖 AI Academic Risk Prediction System
-
-An AI-powered full-stack web application that predicts whether a student is at **Low Risk**, **Medium Risk**, or **High Risk** of academic failure based on performance indicators.
-
-This system helps institutions identify struggling students early and take preventive action.
+# 🎓 SmartGroup AI
+### Automatic Student Group Creator System
 
 ---
 
-## 🚀 Project Overview
+## 📌 Overview
 
-This project is built using:
+SmartGroup AI is an intelligent automation system designed to automatically create balanced and optimized student project groups in colleges and universities.
 
-- ⚛ React (Frontend)
-- 🟢 Node.js + Express (Backend API)
-- 🐍 Python Flask (Machine Learning API)
-- 📊 Scikit-learn (Logistic Regression Model)
-- 🗄 MySQL (Optional for data storage)
-
-The system analyzes:
-
-- Attendance percentage
-- Internal marks percentage
-- Assignment completion percentage
-
-And returns:
-
-- Risk Level
-- AI-based academic suggestion
+Instead of manually dividing students into teams — which often leads to imbalance, bias, and inefficiency — SmartGroup AI uses algorithms to generate fair, skill-balanced, and constraint-aware groups in seconds.
 
 ---
 
-## 🏗 Project Structure
+## 🚨 Problem Statement
 
-```
-ai-academic-risk-system/
-│
-├── frontend/        # React frontend
-├── backend/         # Node.js API server
-└── ml-model/        # Python ML model + Flask API
-```
+Faculty members currently:
 
----
+- Manually divide students into groups
+- Try to balance CGPA and skill levels
+- Avoid friendship bias
+- Prevent repeating the same team combinations
+- Adjust groups when students drop out
 
-## 🧠 How It Works
-
-1. User enters student academic data in React UI.
-2. React sends data to Node.js backend.
-3. Backend forwards data to Python Flask ML API.
-4. Logistic Regression model predicts risk level.
-5. Risk result is returned to frontend.
-6. Result is displayed with color indicator and suggestion.
+This process is:
+- Time-consuming
+- Error-prone
+- Subjective
+- Difficult to manage for large classes
 
 ---
 
-## 🎯 Features
+## 🎯 Solution
 
-✅ AI-based risk prediction  
-✅ Simple and clean dashboard UI  
-✅ Risk classification (Low / Medium / High)  
-✅ Academic improvement suggestion  
-✅ History tracking (last analyses)  
-✅ Optional MySQL database storage  
+SmartGroup AI automates the entire group formation process using:
 
----
+- CGPA-based balancing
+- Skill-based distribution
+- Diversity constraints
+- Conflict avoidance rules
+- Previous grouping history tracking
 
-## 🛠 Installation Guide
+Faculty only need to:
 
-### 1️⃣ Clone the Repository
+1. Upload student data
+2. Select group size
+3. Define constraints
+4. Click "Generate Groups"
 
-```bash
-git clone <your-repo-url>
-cd ai-academic-risk-system
-```
-
----
-
-# 🐍 Setup ML Model (Python)
-
-### Go to ML folder
-
-```bash
-cd ml-model
-```
-
-### Create virtual environment (recommended)
-
-```bash
-python -m venv venv
-venv\Scripts\activate   # Windows
-```
-
-### Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### Train the model (only first time)
-
-```bash
-python train_model.py
-```
-
-This generates:
-```
-risk_model.pkl
-```
-
-### Start Flask ML API
-
-```bash
-python app.py
-```
-
-Runs on:
-```
-http://localhost:5000
-```
+The system automatically produces optimized teams.
 
 ---
 
-# 🟢 Setup Backend (Node.js)
+## ⚙️ Core Features
 
-### Go to backend folder
-
-```bash
-cd backend
-```
-
-### Install dependencies
-
-```bash
-npm install
-```
-
-### Start backend server
-
-```bash
-node server.js
-```
-
-Runs on:
-```
-http://localhost:4000
-```
+### 1️⃣ Balanced Academic Distribution
+Ensures each group has a mix of high, medium, and low CGPA students.
 
 ---
 
-# ⚛ Setup Frontend (React)
-
-### Go to frontend folder
-
-```bash
-cd frontend
-```
-
-### Install dependencies
-
-```bash
-npm install
-```
-
-### Start React app
-
-```bash
-npm start
-```
-
-Runs on:
-```
-http://localhost:3000
-```
+### 2️⃣ Skill-Based Team Formation
+Distributes skills evenly across groups (e.g., coding, documentation, presentation, AI/ML).
 
 ---
 
-## 🔄 Application Flow
+### 3️⃣ Constraint Management
+Faculty can define:
 
-```
-React (3000)
-    ↓
-Node Backend (4000)
-    ↓
-Flask ML API (5000)
-    ↓
-Machine Learning Model
-```
+- Do-not-pair students
+- Gender balance requirement
+- Avoid previous team repetition
+- Custom rules
 
 ---
 
-## 📊 Risk Classification Logic
+### 4️⃣ Automatic Role Assignment
+System assigns roles inside each group:
 
-| Risk Level   | Meaning |
-|-------------|----------|
-| 🟢 Low Risk | Student performance is stable |
-| 🟠 Medium Risk | Needs monitoring and improvement |
-| 🔴 High Risk | Immediate academic intervention recommended |
-
----
-
-## 🧪 Example Input
-
-```
-Attendance: 45
-Marks: 38
-Assignments: 40
-```
-
-Output:
-```
-High Risk
-Suggestion: Immediate academic counseling recommended.
-```
+- Team Leader
+- Developer
+- Documentation Lead
+- Presenter
 
 ---
 
-## 🗄 Optional MySQL Database
-
-If enabled, the system can store:
-
-- Attendance
-- Marks
-- Assignments
-- Risk level
-- Timestamp
-
-Table structure:
-
-```sql
-CREATE TABLE students_analysis (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    attendance INT,
-    marks INT,
-    assignments INT,
-    risk VARCHAR(50),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-```
+### 5️⃣ Dynamic Reallocation
+If a student drops or is absent, the system automatically rebalances affected groups.
 
 ---
 
-## 🔒 Future Improvements
+### 6️⃣ Group Quality Score
+Each generated group receives:
 
-- Add student login authentication
-- Add faculty dashboard
-- Add graphical analytics (charts)
-- Connect real academic data
-- Deploy to cloud (Render / Railway / AWS)
-- Improve ML accuracy with larger dataset
+- Balance Score
+- Skill Coverage Percentage
+- Diversity Score
 
 ---
 
-## 🧠 Why This Project is Valuable
+## 🧠 Algorithm Approach
 
-✔ Beginner-friendly AI integration  
-✔ Full-stack architecture  
-✔ Real-world academic application  
-✔ Hackathon-ready concept  
-✔ Expandable into SaaS product  
+### Basic Version (Hackathon Ready)
+- Sort students by CGPA
+- Distribute in round-robin pattern
+- Apply skill balancing
+- Enforce constraints
 
----
-
-## 📌 Tech Stack Summary
-
-| Layer | Technology |
-|--------|------------|
-| Frontend | React |
-| Backend | Node.js + Express |
-| ML API | Python Flask |
-| ML Model | Logistic Regression |
-| Database | MySQL (Optional) |
+### Advanced Version
+- Genetic Algorithm Optimization
+- Fitness function minimizes:
+  - CGPA variance
+  - Skill imbalance
+  - Conflict violations
+  - Repeated grouping
 
 ---
 
-## 👨‍💻 Author
+## 🏗️ Tech Stack
 
-Your Name  
-AI Academic Risk Prediction System  
+### Frontend
+- React.js
+- Tailwind CSS
+- Chart.js (for analytics)
+
+### Backend
+- Python (FastAPI / Django)
+- REST API architecture
+
+### Database
+- PostgreSQL / MySQL
+
+### Optional Enhancements
+- Machine Learning for compatibility prediction
+- Personality-based matching
 
 ---
 
-## 📄 License
+## 📊 System Architecture
 
-This project is for educational and demonstration purposes.
+User Interface → Backend API → Group Formation Engine → Database → Output Generator
+
+---
+
+## 📂 Database Schema (Simplified)
+
+### Students
+- student_id
+- name
+- cgpa
+- skills
+- gender
+- previous_groups
+
+### Groups
+- group_id
+- semester
+- project_title
+
+### GroupMembers
+- group_id
+- student_id
+
+### Constraints
+- avoid_pair_student1
+- avoid_pair_student2
+
+---
+
+## 🔐 Fairness & Transparency
+
+- Eliminates favoritism
+- Prevents biased grouping
+- Provides explainable group allocation
+- Maintains audit logs
+
+---
+
+## 🚀 Future Enhancements
+
+- AI Compatibility Scoring
+- Personality-based grouping
+- Real-time collaboration insights
+- Integration with LMS systems
+- Performance tracking per group
+
+---
+
+## 🎓 Use Cases
+
+- Mini Projects
+- Final Year Projects
+- Lab Grouping
+- Hackathon Team Formation
+- Classroom Activities
+
+---
+
+## 💡 Impact
+
+- Saves faculty time
+- Ensures fair team distribution
+- Improves project performance
+- Reduces complaints
+- Scales for large institutions
+
+---
+
+## 🏆 Why This Project Matters
+
+Team formation directly affects:
+
+- Student learning
+- Project success
+- Team collaboration
+- Academic fairness
+
+SmartGroup AI transforms a manual academic process into an intelligent automated system.
+
+---
+
+## 📜 License
+
+This project is developed for academic and research purposes.
